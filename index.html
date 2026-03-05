@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remi — 个人主页</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="assets/remi-logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,6 +18,7 @@
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="#" class="nav-logo">
+                <img src="assets/logo.svg" alt="Remi" class="nav-logo-icon">
                 <span class="logo-text">Remi</span>
                 <span class="logo-dot"></span>
             </a>
@@ -244,7 +247,7 @@
                 <article class="work-item" data-category="complete">
                     <a href="project-remi-radar.html" class="work-link">
                         <div class="work-image">
-                            <img src="assets/remi-radar.jpg" alt="Remi Radar" class="work-screenshot">
+                            <img src="assets/remi-radar-thumb.svg" alt="Remi Radar" class="work-screenshot">
                             <div class="work-overlay">
                                 <span class="overlay-text">查看详情</span>
                                 <i class="fas fa-arrow-right"></i>
@@ -266,15 +269,18 @@
                         </div>
                     </a>
                 </article>
-                <!-- Project 2: AI 小说生成器 -->
+                <!-- Project 2: AI 小说创作工作流系统 -->
                 <article class="work-item" data-category="demo">
-                    <div class="work-link-disabled">
+                    <a href="project-novel-workflow.html" class="work-link">
                         <div class="work-image">
-                            <div class="work-placeholder">
-                                <i class="fas fa-book-open"></i>
+                            <img src="assets/novel-workflow-thumb.svg" alt="AI 小说创作工作流系统" class="work-screenshot">
+                            <div class="dna-overlay">
+                                <span class="dna-strand dna-left"></span>
+                                <span class="dna-strand dna-right"></span>
                             </div>
-                            <div class="work-overlay work-overlay-disabled">
-                                <span class="overlay-text">敬请期待</span>
+                            <div class="work-overlay">
+                                <span class="overlay-text">查看详情</span>
+                                <i class="fas fa-arrow-right"></i>
                             </div>
                         </div>
                         <div class="work-info">
@@ -282,74 +288,204 @@
                                 <span class="work-category">Demo</span>
                                 <span class="work-year">2026</span>
                             </div>
-                            <h3 class="work-title">AI 小说自动生成器</h3>
-                            <p class="work-desc">基于 AI 的小说创作辅助工具，自动生成故事大纲和章节内容</p>
+                            <h3 class="work-title">AI 小说创作工作流系统</h3>
+                            <p class="work-desc">DNA 档案 + 情绪节拍 + 分层写作三大核心方法论，系统化创作高质量小说</p>
                             <div class="work-tags">
+                                <span>Flask</span>
+                                <span>Claude AI</span>
+                                <span>创意写作</span>
+                                <span>工作流</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <!-- Project 3: AI 视频生成工具 -->
+                <article class="work-item" data-category="demo">
+                    <a href="project-ai-video-generator.html" class="work-link">
+                        <div class="work-image">
+                            <img src="assets/ai-video-generator-thumb.svg" alt="AI 视频生成工具" class="work-screenshot">
+                            <div class="work-overlay">
+                                <span class="overlay-text">查看详情</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <div class="work-meta">
+                                <span class="work-category">Demo</span>
+                                <span class="work-year">2026</span>
+                            </div>
+                            <h3 class="work-title">AI 视频生成工具</h3>
+                            <p class="work-desc">基于 AI 的视频创作平台，文生视频、AI 生图、智能配音，完全免费</p>
+                            <div class="work-tags">
+                                <span>Flask</span>
+                                <span>Edge TTS</span>
+                                <span>Pollinations AI</span>
+                                <span>MoviePy</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <!-- Project 4: Agent_WE 多智能体团队讨论 -->
+                <article class="work-item" data-category="demo">
+                    <a href="project-agent-we.html" class="work-link">
+                        <div class="work-image">
+                            <img src="assets/agent-we-thumb.svg" alt="Agent_WE" class="work-screenshot">
+                            <div class="network-overlay">
+                                <span class="network-node node-1"></span>
+                                <span class="network-node node-2"></span>
+                                <span class="network-node node-3"></span>
+                                <span class="network-node node-4"></span>
+                                <span class="network-node node-5"></span>
+                                <span class="network-node node-6"></span>
+                                <span class="network-line line-1-2"></span>
+                                <span class="network-line line-3-4"></span>
+                                <span class="network-line line-5-6"></span>
+                            </div>
+                            <div class="work-overlay">
+                                <span class="overlay-text">查看详情</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <div class="work-meta">
+                                <span class="work-category">Demo</span>
+                                <span class="work-year">2026</span>
+                            </div>
+                            <h3 class="work-title">Agent_WE — 多智能体对话系统</h3>
+                            <p class="work-desc">基于 LangChain + LangGraph 的多智能体协作对话系统，提供情绪陪伴和工作讨论</p>
+                            <div class="work-tags">
+                                <span>LangChain</span>
+                                <span>LangGraph</span>
+                                <span>Streamlit</span>
                                 <span>AI</span>
-                                <span>LLM</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </article>
-                <!-- Project 3: AI 资讯视频生成器 -->
-                <article class="work-item" data-category="demo">
-                    <div class="work-link-disabled">
-                        <div class="work-image">
-                            <div class="work-placeholder">
-                                <i class="fas fa-video"></i>
-                            </div>
-                            <div class="work-overlay work-overlay-disabled">
-                                <span class="overlay-text">敬请期待</span>
-                            </div>
-                        </div>
-                        <div class="work-info">
-                            <div class="work-meta">
-                                <span class="work-category">Demo</span>
-                                <span class="work-year">2026</span>
-                            </div>
-                            <h3 class="work-title">AI 资讯视频生成器</h3>
-                            <p class="work-desc">将资讯文章自动转换为短视频，包含文案、配音、画面生成</p>
-                            <div class="work-tags">
-                                <span>AI</span>
-                                <span>视频生成</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <!-- Project 4: 多智能体团队讨论 -->
-                <article class="work-item" data-category="demo">
-                    <div class="work-link-disabled">
-                        <div class="work-image">
-                            <div class="work-placeholder">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <div class="work-overlay work-overlay-disabled">
-                                <span class="overlay-text">敬请期待</span>
-                            </div>
-                        </div>
-                        <div class="work-info">
-                            <div class="work-meta">
-                                <span class="work-category">Demo</span>
-                                <span class="work-year">2026</span>
-                            </div>
-                            <h3 class="work-title">多智能体团队讨论系统</h3>
-                            <p class="work-desc">模拟真实团队讨论场景，多个 AI Agent 协作解决问题</p>
-                            <div class="work-tags">
-                                <span>Agentic</span>
-                                <span>多智能体</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <!-- Project 5: 成长教练 Skill -->
+                <!-- Project 5: Agent Teams Playbook -->
                 <article class="work-item" data-category="skills">
+                    <a href="project-agent-teams-playbook.html" class="work-link">
+                        <div class="work-image">
+                            <img src="assets/agent-teams-playbook-thumb.svg" alt="Agent Teams Playbook" class="work-screenshot">
+                            <div class="orbit-overlay">
+                                <div class="orbit-center"></div>
+                                <div class="orbit-ring orbit-1">
+                                    <span class="orbit-dot"></span>
+                                </div>
+                                <div class="orbit-ring orbit-2">
+                                    <span class="orbit-dot"></span>
+                                </div>
+                                <div class="orbit-ring orbit-3">
+                                    <span class="orbit-dot"></span>
+                                </div>
+                                <span class="flow-line flow-1"></span>
+                                <span class="flow-line flow-2"></span>
+                                <span class="flow-line flow-3"></span>
+                                <span class="flow-line flow-4"></span>
+                            </div>
+                            <div class="work-overlay">
+                                <span class="overlay-text">查看详情</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <div class="work-meta">
+                                <span class="work-category">Skills</span>
+                                <span class="work-year">2026</span>
+                            </div>
+                            <h3 class="work-title">Agent Teams Playbook</h3>
+                            <p class="work-desc">Agent Teams 编排器 - 五件套自动编排核心，复杂任务的智能决策与协作系统</p>
+                            <div class="work-tags">
+                                <span>Claude Code</span>
+                                <span>Agent Teams</span>
+                                <span>Task Orchestration</span>
+                                <span>Multi-Agent</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <!-- Project 6: 定制工作自动化系统 -->
+                <article class="work-item" data-category="complete">
                     <div class="work-link-disabled">
                         <div class="work-image">
-                            <div class="work-placeholder">
-                                <i class="fas fa-coach"></i>
+                            <img src="assets/custom-automation-thumb.svg" alt="定制工作自动化系统" class="work-screenshot">
+                            <!-- 自动化流程动画覆盖层 -->
+                            <div class="automation-overlay">
+                                <!-- 角落装饰 -->
+                                <div class="automation-corner top-left"></div>
+                                <div class="automation-corner top-right"></div>
+                                <div class="automation-corner bottom-left"></div>
+                                <div class="automation-corner bottom-right"></div>
+
+                                <!-- 模块 -->
+                                <div class="automation-module email">
+                                    <svg class="automation-icon" viewBox="0 0 32 32">
+                                        <rect x="5" y="8" width="22" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M5 10L16 18L27 10" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <div class="automation-module document">
+                                    <svg class="automation-icon" viewBox="0 0 32 32">
+                                        <path d="M10 6H18L22 10V26H10V6Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M18 6V10H22" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <line x1="14" y1="15" x2="20" y2="15" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="14" y1="20" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="14" y1="25" x2="18" y2="25" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="automation-module rpa">
+                                    <svg class="automation-icon" viewBox="0 0 32 32">
+                                        <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M16 10V14L19 17" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <circle cx="16" cy="16" r="2" fill="currentColor"/>
+                                    </svg>
+                                </div>
+
+                                <!-- 数据流线 -->
+                                <div class="automation-line line-1"></div>
+                                <div class="automation-line line-2"></div>
+
+                                <!-- 流动的数据点 -->
+                                <div class="automation-dot"></div>
+
+                                <!-- 扫描线 -->
+                                <div class="automation-scan-line"></div>
+
+                                <!-- 状态指示器 -->
+                                <div class="automation-status">
+                                    <span class="status-dot"></span>
+                                    <span class="status-text">运行中</span>
+                                </div>
                             </div>
                             <div class="work-overlay work-overlay-disabled">
-                                <span class="overlay-text">敬请期待</span>
+                                <span class="overlay-text">产品开发中</span>
+                                <i class="fas fa-hourglass"></i>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <div class="work-meta">
+                                <span class="work-category">完整作品</span>
+                                <span class="work-year">2026</span>
+                            </div>
+                            <h3 class="work-title">定制工作自动化系统</h3>
+                            <p class="work-desc">本地化 LLM 驱动的企业智能自动化平台，邮件处理、单证解析、RPA 流程自动化</p>
+                            <div class="work-tags">
+                                <span>FastAPI</span>
+                                <span>Vue 3</span>
+                                <span>本地 LLM</span>
+                                <span>RPA</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- Project 7: 成长教练 Skill -->
+                <article class="work-item" data-category="skills">
+                    <a href="project-growth-coach.html" class="work-link">
+                        <div class="work-image">
+                            <img src="assets/growth-coach-thumb.svg" alt="成长教练 Skill" class="work-screenshot">
+                            <div class="work-overlay">
+                                <span class="overlay-text">查看详情</span>
+                                <i class="fas fa-arrow-right"></i>
                             </div>
                         </div>
                         <div class="work-info">
@@ -358,23 +494,23 @@
                                 <span class="work-year">2026</span>
                             </div>
                             <h3 class="work-title">成长教练 Skill</h3>
-                            <p class="work-desc">AI 技能模板，提供个人成长规划和目标拆解指导</p>
+                            <p class="work-desc">从 Vibe Coder 到 Agentic Engineer 的实战教练</p>
                             <div class="work-tags">
                                 <span>AI Skill</span>
-                                <span>个人成长</span>
+                                <span>Agentic</span>
+                                <span>教学系统</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </article>
-                <!-- Project 6: 项目制作 Skill -->
+                <!-- Project 6: QualityGuard L3 -->
                 <article class="work-item" data-category="skills">
-                    <div class="work-link-disabled">
+                    <a href="project-quality-guard.html" class="work-link">
                         <div class="work-image">
-                            <div class="work-placeholder">
-                                <i class="fas fa-layer-group"></i>
-                            </div>
-                            <div class="work-overlay work-overlay-disabled">
-                                <span class="overlay-text">敬请期待</span>
+                            <img src="assets/quality-guard-thumb.svg" alt="QualityGuard L3" class="work-screenshot">
+                            <div class="work-overlay">
+                                <span class="overlay-text">查看详情</span>
+                                <i class="fas fa-arrow-right"></i>
                             </div>
                         </div>
                         <div class="work-info">
@@ -382,15 +518,15 @@
                                 <span class="work-category">Skills</span>
                                 <span class="work-year">2026</span>
                             </div>
-                            <h3 class="work-title">项目制作 Skill</h3>
-                            <p class="work-desc">AI 技能模板，采用垂直切分 +TDD 方式指导项目开发</p>
+                            <h3 class="work-title">QualityGuard L3</h3>
+                            <p class="work-desc">垂直切片 × 自适应 TDD 质量保障系统</p>
                             <div class="work-tags">
                                 <span>AI Skill</span>
                                 <span>TDD</span>
-                                <span>垂直切分</span>
+                                <span>代码质量</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </article>
                 <!-- More -->
                 <article class="work-item work-more">

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remi Radar — 智能信息雷达 | Remi</title>
     <meta name="description" content="Electron 桌面应用，集成 RSS、AI 分析、多平台爬虫的智能信息采集系统">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/project.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +21,7 @@
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
+                <img src="assets/logo.svg" alt="Remi" class="nav-logo-icon">
                 <span class="logo-text">Remi</span>
                 <span class="logo-dot"></span>
             </a>
@@ -113,45 +115,45 @@
                     </p>
                 </div>
 
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
+                <div class="features-grid-premium">
+                    <div class="feature-card-premium">
+                        <div class="feature-icon-premium">
                             <i class="fas fa-rss"></i>
                         </div>
                         <h3>RSS 订阅管理</h3>
                         <p>支持添加/管理多个 RSS 订阅源，内置国内优质 RSS 源（虎嗅、36 氪、少数派、IT 之家等）</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
+                    <div class="feature-card-premium">
+                        <div class="feature-icon-premium">
                             <i class="fas fa-brain"></i>
                         </div>
                         <h3>AI 智能分析</h3>
                         <p>集成 DeepSeek AI，0-10 分智能评分，自动提取关键词标签，生成文章摘要</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-search"></i>
+                    <div class="feature-card-premium">
+                        <div class="feature-icon-premium">
+                            <i class="fas fa-magnifying-glass"></i>
                         </div>
                         <h3>语义搜索</h3>
                         <p>基于 Embedding 向量的智能语义搜索，支持自然语言查询</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
+                    <div class="feature-card-premium">
+                        <div class="feature-icon-premium">
                             <i class="fas fa-clock"></i>
                         </div>
                         <h3>定时任务</h3>
                         <p>灵活的 cron 表达式调度，支持每日/每周任务，自动获取资讯</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-robot"></i>
+                    <div class="feature-card-premium">
+                        <div class="feature-icon-premium">
+                            <i class="fas fa-spider"></i>
                         </div>
                         <h3>多平台爬虫</h3>
                         <p>支持知乎热榜、Twitter/X、微博热搜、GitHub Trending 等平台</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-file-export"></i>
+                    <div class="feature-card-premium">
+                        <div class="feature-icon-premium">
+                            <i class="fas fa-paper-plane"></i>
                         </div>
                         <h3>飞书集成</h3>
                         <p>多维表格记录同步，每日简报推送，Webhook 消息推送</p>
@@ -326,22 +328,34 @@
                     <h2 class="section-heading">运行数据</h2>
                 </div>
 
-                <div class="stats-grid-simple">
-                    <div class="stat-box">
-                        <span class="stat-num">50+</span>
-                        <span class="stat-label">已采集记录</span>
+                <div class="premium-stats-grid">
+                    <div class="premium-stat-card">
+                        <div class="premium-stat-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>50+</h4>
+                        <p>已采集记录</p>
                     </div>
-                    <div class="stat-box">
-                        <span class="stat-num">9 个</span>
-                        <span class="stat-label">定时任务</span>
+                    <div class="premium-stat-card">
+                        <div class="premium-stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>9 个</h4>
+                        <p>定时任务</p>
                     </div>
-                    <div class="stat-box">
-                        <span class="stat-num">9 个</span>
-                        <span class="stat-label">RSS 订阅源</span>
+                    <div class="premium-stat-card">
+                        <div class="premium-stat-icon">
+                            <i class="fas fa-rss"></i>
+                        </div>
+                        <h4>9 个</h4>
+                        <p>RSS 订阅源</p>
                     </div>
-                    <div class="stat-box">
-                        <span class="stat-num">80%</span>
-                        <span class="stat-label">AI 处理率</span>
+                    <div class="premium-stat-card">
+                        <div class="premium-stat-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>80%</h4>
+                        <p>AI 处理率</p>
                     </div>
                 </div>
             </div>
