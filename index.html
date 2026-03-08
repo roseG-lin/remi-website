@@ -3,12 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remi — 个人主页</title>
+    
+    <!-- 基础 Meta 标签 -->
+    <title>Remi — 个人主页 | AI 应用开发者</title>
+    <meta name="title" content="Remi — 个人主页 | AI 应用开发者">
+    <meta name="description" content="专注 AI 应用落地与智能自动化系统开发，探索 AI Agent 与业务场景的深度融合。作品包括 Remi Radar、AI 小说创作工作流、定制工作自动化系统等。">
+    <meta name="keywords" content="Remi, AI 应用开发，智能自动化，AI Agent, 个人主页，作品集">
+    <meta name="author" content="Remi">
+    
+    <!-- 网站图标 -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="assets/remi-logo.png">
+
+    <!-- 资源预连接 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- 样式表 -->
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.remifei.cn/">
+    <meta property="og:title" content="Remi — 个人主页 | AI 应用开发者">
+    <meta property="og:description" content="专注 AI 应用落地与智能自动化系统开发，探索 AI Agent 与业务场景的深度融合。作品包括 Remi Radar、AI 小说创作工作流、定制工作自动化系统等。">
+    <meta property="og:image" content="https://www.remifei.cn/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Remi">
+    <meta property="og:locale" content="zh_CN">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.remifei.cn/">
+    <meta name="twitter:title" content="Remi — 个人主页 | AI 应用开发者">
+    <meta name="twitter:description" content="专注 AI 应用落地与智能自动化系统开发，探索 AI Agent 与业务场景的深度融合。">
+    <meta name="twitter:image" content="https://www.remifei.cn/assets/og-image.jpg">
+    <meta name="twitter:creator" content="@你的 Twitter">
+    
+    <!-- 微信分享优化 -->
+    <meta name="wechat:title" content="Remi — 个人主页 | AI 应用开发者">
+    <meta name="wechat:description" content="专注 AI 应用落地与智能自动化系统开发，探索 AI Agent 与业务场景的深度融合。">
+    <meta name="wechat:image" content="https://www.remifei.cn/assets/og-image.jpg">
+
+    <!-- 微信 JS-SDK（需要公众号配置后启用） -->
+    <!-- 
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <script>
+    // 微信分享配置 - 需要后端提供签名
+    // 获取签名后取消下面注释并填入配置
+    /*
+    fetch('/api/wechat-signature?url=' + encodeURIComponent(window.location.href))
+      .then(res => res.json())
+      .then(data => {
+        wx.config({
+          debug: false,
+          appId: data.appId,           // 公众号 ID
+          timestamp: data.timestamp,    // 时间戳
+          nonceStr: data.nonceStr,      // 随机字符串
+          signature: data.signature,    // 签名
+          jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData']
+        });
+      });
+    
+    wx.ready(() => {
+      const shareConfig = {
+        title: 'Remi — 个人主页 | AI 应用开发者',
+        desc: '专注 AI 应用落地与智能自动化系统开发，探索 AI Agent 与业务场景的深度融合。',
+        link: 'https://www.remifei.cn/',
+        imgUrl: 'https://www.remifei.cn/assets/og-image.jpg',
+        success: () => console.log('分享成功')
+      };
+      wx.updateAppMessageShareData(shareConfig);      // 朋友分享
+      wx.updateTimelineShareData(shareConfig);        // 朋友圈分享
+    });
+    */
+    </script>
+    -->
 </head>
 <body>
     <!-- Canvas Background -->
@@ -81,7 +155,7 @@
                 <div class="image-wrapper">
                     <div class="image-ring"></div>
                     <div class="image-glow"></div>
-                    <img src="assets/avatar.jpg" alt="Remi" class="avatar-photo">
+                    <img src="assets/avatar.jpg" alt="Remi" class="avatar-photo" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -95,7 +169,7 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <span class="stat-number" data-count="8">0</span>
+                    <span class="stat-number" data-count="7">0</span>
                     <span class="stat-label">作品与项目</span>
                 </div>
                 <div class="stat-divider"></div>
@@ -215,7 +289,7 @@
                     <div class="goal-number">03</div>
                     <div class="goal-content">
                         <h3>转型 · AI 工程</h3>
-                        <p>今年 1 月，正式踏上 AI 学习之路。<br>从 Vibe Coding 到 Agentic Engineering，<br>2 个月，8 个项目，每天都在突破认知。</p>
+                        <p>今年 1 月，正式踏上 AI 学习之路。<br>从 Vibe Coding 到 Agentic Engineering，<br>1 个月，7 个项目，每天都在突破认知。</p>
                     </div>
                 </div>
                 <div class="goal-card">
@@ -247,7 +321,7 @@
                 <article class="work-item" data-category="complete">
                     <a href="project-remi-radar.html" class="work-link">
                         <div class="work-image">
-                            <img src="assets/remi-radar-thumb.svg" alt="Remi Radar" class="work-screenshot">
+                            <img src="assets/remi-radar-thumb.svg" alt="Remi Radar" class="work-screenshot" loading="lazy" decoding="async">
                             <div class="work-overlay">
                                 <span class="overlay-text">查看详情</span>
                                 <i class="fas fa-arrow-right"></i>
@@ -273,7 +347,7 @@
                 <article class="work-item" data-category="demo">
                     <a href="project-novel-workflow.html" class="work-link">
                         <div class="work-image">
-                            <img src="assets/novel-workflow-thumb.svg" alt="AI 小说创作工作流系统" class="work-screenshot">
+                            <img src="assets/novel-workflow-thumb.svg" alt="AI 小说创作工作流系统" class="work-screenshot" loading="lazy" decoding="async">
                             <div class="dna-overlay">
                                 <span class="dna-strand dna-left"></span>
                                 <span class="dna-strand dna-right"></span>
@@ -303,7 +377,7 @@
                 <article class="work-item" data-category="demo">
                     <a href="project-ai-video-generator.html" class="work-link">
                         <div class="work-image">
-                            <img src="assets/ai-video-generator-thumb.svg" alt="AI 视频生成工具" class="work-screenshot">
+                            <img src="assets/ai-video-generator-thumb.svg" alt="AI 视频生成工具" class="work-screenshot" loading="lazy" decoding="async">
                             <div class="work-overlay">
                                 <span class="overlay-text">查看详情</span>
                                 <i class="fas fa-arrow-right"></i>
@@ -329,7 +403,7 @@
                 <article class="work-item" data-category="demo">
                     <a href="project-agent-we.html" class="work-link">
                         <div class="work-image">
-                            <img src="assets/agent-we-thumb.svg" alt="Agent_WE" class="work-screenshot">
+                            <img src="assets/agent-we-thumb.svg" alt="Agent_WE" class="work-screenshot" loading="lazy" decoding="async">
                             <div class="network-overlay">
                                 <span class="network-node node-1"></span>
                                 <span class="network-node node-2"></span>
@@ -362,53 +436,11 @@
                         </div>
                     </a>
                 </article>
-                <!-- Project 5: Agent Teams Playbook -->
-                <article class="work-item" data-category="skills">
-                    <a href="project-agent-teams-playbook.html" class="work-link">
-                        <div class="work-image">
-                            <img src="assets/agent-teams-playbook-thumb.svg" alt="Agent Teams Playbook" class="work-screenshot">
-                            <div class="orbit-overlay">
-                                <div class="orbit-center"></div>
-                                <div class="orbit-ring orbit-1">
-                                    <span class="orbit-dot"></span>
-                                </div>
-                                <div class="orbit-ring orbit-2">
-                                    <span class="orbit-dot"></span>
-                                </div>
-                                <div class="orbit-ring orbit-3">
-                                    <span class="orbit-dot"></span>
-                                </div>
-                                <span class="flow-line flow-1"></span>
-                                <span class="flow-line flow-2"></span>
-                                <span class="flow-line flow-3"></span>
-                                <span class="flow-line flow-4"></span>
-                            </div>
-                            <div class="work-overlay">
-                                <span class="overlay-text">查看详情</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                        <div class="work-info">
-                            <div class="work-meta">
-                                <span class="work-category">Skills</span>
-                                <span class="work-year">2026</span>
-                            </div>
-                            <h3 class="work-title">Agent Teams Playbook</h3>
-                            <p class="work-desc">Agent Teams 编排器 - 五件套自动编排核心，复杂任务的智能决策与协作系统</p>
-                            <div class="work-tags">
-                                <span>Claude Code</span>
-                                <span>Agent Teams</span>
-                                <span>Task Orchestration</span>
-                                <span>Multi-Agent</span>
-                            </div>
-                        </div>
-                    </a>
-                </article>
                 <!-- Project 6: 定制工作自动化系统 -->
                 <article class="work-item" data-category="complete">
                     <div class="work-link-disabled">
                         <div class="work-image">
-                            <img src="assets/custom-automation-thumb.svg" alt="定制工作自动化系统" class="work-screenshot">
+                            <img src="assets/custom-automation-thumb.svg" alt="定制工作自动化系统" class="work-screenshot" loading="lazy" decoding="async">
                             <!-- 自动化流程动画覆盖层 -->
                             <div class="automation-overlay">
                                 <!-- 角落装饰 -->
@@ -482,7 +514,7 @@
                 <article class="work-item" data-category="skills">
                     <a href="project-growth-coach.html" class="work-link">
                         <div class="work-image">
-                            <img src="assets/growth-coach-thumb.svg" alt="成长教练 Skill" class="work-screenshot">
+                            <img src="assets/growth-coach-thumb.svg" alt="成长教练 Skill" class="work-screenshot" loading="lazy" decoding="async">
                             <div class="work-overlay">
                                 <span class="overlay-text">查看详情</span>
                                 <i class="fas fa-arrow-right"></i>
@@ -507,7 +539,7 @@
                 <article class="work-item" data-category="skills">
                     <a href="project-quality-guard.html" class="work-link">
                         <div class="work-image">
-                            <img src="assets/quality-guard-thumb.svg" alt="QualityGuard L3" class="work-screenshot">
+                            <img src="assets/quality-guard-thumb.svg" alt="QualityGuard L3" class="work-screenshot" loading="lazy" decoding="async">
                             <div class="work-overlay">
                                 <span class="overlay-text">查看详情</span>
                                 <i class="fas fa-arrow-right"></i>

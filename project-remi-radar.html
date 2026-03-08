@@ -3,9 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 基础 Meta 标签 -->
     <title>Remi Radar — 智能信息雷达 | Remi</title>
+    <meta name="title" content="Remi Radar — 智能信息雷达 | Remi">
     <meta name="description" content="Electron 桌面应用，集成 RSS、AI 分析、多平台爬虫的智能信息采集系统">
+    <meta name="keywords" content="Remi Radar, RSS, AI 分析，智能信息采集，Electron, 桌面应用">
+    
+    <!-- Open Graph / 社交媒体分享 -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.remifei.cn/project-remi-radar.html">
+    <meta property="og:title" content="Remi Radar — 智能信息雷达">
+    <meta property="og:description" content="Electron 桌面应用，集成 RSS 订阅、AI 智能分析、多平台爬虫的智能信息采集系统">
+    <meta property="og:image" content="https://www.remifei.cn/assets/remi-radar-thumb.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Remi">
+    <meta property="og:locale" content="zh_CN">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Remi Radar — 智能信息雷达">
+    <meta name="twitter:description" content="Electron 桌面应用，集成 RSS、AI 分析、多平台爬虫的智能信息采集系统">
+    <meta name="twitter:image" content="https://www.remifei.cn/assets/remi-radar-thumb.svg">
+    
+    <!-- 微信分享优化 -->
+    <meta name="wechat:title" content="Remi Radar — 智能信息雷达">
+    <meta name="wechat:description" content="Electron 桌面应用，集成 RSS、AI 分析、多平台爬虫的智能信息采集系统">
+    <meta name="wechat:image" content="https://www.remifei.cn/assets/remi-radar-thumb.svg">
+
+    <!-- 微信 JS-SDK（需要公众号配置后启用） -->
+    <!-- 
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <script>
+    // 微信分享配置 - 需要后端提供签名
+    // 获取签名后取消下面注释并填入配置
+    /*
+    fetch('/api/wechat-signature?url=' + encodeURIComponent(window.location.href))
+      .then(res => res.json())
+      .then(data => {
+        wx.config({
+          debug: false,
+          appId: data.appId,
+          timestamp: data.timestamp,
+          nonceStr: data.nonceStr,
+          signature: data.signature,
+          jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData']
+        });
+      });
+    
+    wx.ready(() => {
+      const shareConfig = {
+        title: 'Remi Radar — 智能信息雷达',
+        desc: 'Electron 桌面应用，集成 RSS、AI 分析、多平台爬虫的智能信息采集系统',
+        link: 'https://www.remifei.cn/project-remi-radar.html',
+        imgUrl: 'https://www.remifei.cn/assets/remi-radar-thumb.svg',
+        success: () => console.log('分享成功')
+      };
+      wx.updateAppMessageShareData(shareConfig);
+      wx.updateTimelineShareData(shareConfig);
+    });
+    */
+    </script>
+    -->
+
+    <!-- 网站图标 -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- 样式表 -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/project.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,17 +149,17 @@
         <div class="container">
             <div class="gallery-grid">
                 <div class="gallery-main">
-                    <img src="assets/1.jpg" alt="Remi Radar 主界面" class="gallery-image">
+                    <img src="assets/1.jpg" alt="Remi Radar 主界面" class="gallery-image" loading="lazy" decoding="async">
                 </div>
                 <div class="gallery-thumbs">
                     <div class="thumb-item">
-                        <img src="assets/2.jpg" alt="功能界面" class="thumb-image">
+                        <img src="assets/2.jpg" alt="功能界面" class="thumb-image" loading="lazy" decoding="async">
                     </div>
                     <div class="thumb-item">
-                        <img src="assets/3.jpg" alt="设置界面" class="thumb-image">
+                        <img src="assets/3.jpg" alt="设置界面" class="thumb-image" loading="lazy" decoding="async">
                     </div>
                     <div class="thumb-item">
-                        <img src="assets/4.jpg" alt="数据展示" class="thumb-image">
+                        <img src="assets/4.jpg" alt="数据展示" class="thumb-image" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>

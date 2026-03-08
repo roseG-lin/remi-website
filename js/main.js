@@ -3,6 +3,17 @@
    升级版交互脚本 - 高级背景动画 + 鼠标跟随
    ============================================ */
 
+// 性能优化：检测低端设备，降低动画复杂度
+const isLowEndDevice = () => {
+    const cores = navigator.hardwareConcurrency || 4;
+    const memory = navigator.deviceMemory || 4;
+    return cores < 4 || memory < 4;
+};
+
+// 性能优化：页面可见性检测，隐藏时暂停动画
+let canvasAnimationId = null;
+let canvasAnimationRunning = true;
+
 document.addEventListener('DOMContentLoaded', () => {
     initCanvas();
     initNavbar();
@@ -15,6 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
     initCursorGlow();
     initJourneyCards();
     initWeChat();
+    
+    // 页面可见性变化时暂停/恢复动画
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            canvasAnimationRunning = false;
+        } else {
+            canvasAnimationRunning = true;
+        }
+    });
 });
 
 /* ============================================
@@ -24,12 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
 function initCanvas() {
     const canvas = document.getElementById('bg-canvas');
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext('2d');
     let particles = [];
     let mouseParticles = [];
     let mouse = { x: null, y: null, radius: 150 };
     let hue = 0;
+
+    // 性能优化：检测低端设备，降低动画复杂度
+    const lowEnd = isLowEndDevice();
+    const maxParticles = lowEnd ? 50 : 100;
+    const maxMouseParticles = lowEnd ? 30 : 60;
+    const hueSpeed = lowEnd ? 0.8 : 1.5;
 
     const colors = {
         primary: '255, 140, 66',    // 暖橙色
@@ -45,23 +71,27 @@ function initCanvas() {
     resize();
     window.addEventListener('resize', resize);
 
+    // 性能优化：低端设备减少鼠标粒子生成
+    const mouseParticlesPerMove = lowEnd ? 1 : 2;
+    const maxMouseParticlesGlobal = lowEnd ? 30 : 60;
+
     // 鼠标移动追踪
     window.addEventListener('mousemove', (e) => {
         mouse.x = e.x;
         mouse.y = e.y;
-        
+
         // 创建鼠标跟随粒子
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < mouseParticlesPerMove; i++) {
             mouseParticles.push(new MouseParticle(
                 e.x + (Math.random() - 0.5) * 20,
                 e.y + (Math.random() - 0.5) * 20,
                 Math.random() * 2 + 1
             ));
         }
-        
+
         // 限制粒子数量
-        if (mouseParticles.length > 60) {
-            mouseParticles.splice(0, mouseParticles.length - 60);
+        if (mouseParticles.length > maxMouseParticlesGlobal) {
+            mouseParticles.splice(0, mouseParticles.length - maxMouseParticlesGlobal);
         }
     });
 
@@ -161,7 +191,7 @@ function initCanvas() {
     }
 
     // 初始化粒子
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < maxParticles; i++) {
         particles.push(new Particle());
     }
 
@@ -189,7 +219,7 @@ function initCanvas() {
     // 鼠标光晕环
     function drawMouseGlow() {
         if (!mouse.x || !mouse.y) return;
-        
+
         const gradient = ctx.createRadialGradient(
             mouse.x, mouse.y, 0,
             mouse.x, mouse.y, mouse.radius
@@ -197,12 +227,12 @@ function initCanvas() {
         gradient.addColorStop(0, `hsla(${hue}, 80%, 60%, 0.04)`);
         gradient.addColorStop(0.5, `hsla(${hue}, 80%, 60%, 0.015)`);
         gradient.addColorStop(1, `hsla(${hue}, 80%, 60%, 0)`);
-        
+
         ctx.beginPath();
         ctx.arc(mouse.x, mouse.y, mouse.radius, 0, Math.PI * 2);
         ctx.fillStyle = gradient;
         ctx.fill();
-        
+
         // 中心亮点
         ctx.beginPath();
         ctx.arc(mouse.x, mouse.y, 6, 0, Math.PI * 2);
@@ -213,12 +243,18 @@ function initCanvas() {
     // 动画循环
     let time = 0;
     function animate() {
+        // 页面隐藏时暂停动画，节省资源
+        if (!canvasAnimationRunning) {
+            canvasAnimationId = requestAnimationFrame(animate);
+            return;
+        }
+
         // 轻微拖尾效果
         ctx.fillStyle = 'rgba(18, 18, 20, 0.2)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
+
         time += 16;
-        hue = (hue + 1.5) % 360;  // 色相流转速度提升（0.3 → 1.5）
+        hue = (hue + hueSpeed) % 360;
 
         // 更新和绘制粒子
         particles.forEach(p => {
@@ -228,6 +264,9 @@ function initCanvas() {
 
         // 更新和绘制鼠标粒子
         mouseParticles = mouseParticles.filter(p => p.life > 0);
+        if (mouseParticles.length > maxMouseParticles) {
+            mouseParticles.splice(0, mouseParticles.length - maxMouseParticles);
+        }
         mouseParticles.forEach(p => {
             p.update();
             p.draw();
@@ -235,11 +274,11 @@ function initCanvas() {
 
         // 绘制连线
         connect();
-        
+
         // 绘制鼠标光晕
         drawMouseGlow();
 
-        requestAnimationFrame(animate);
+        canvasAnimationId = requestAnimationFrame(animate);
     }
 
     animate();
