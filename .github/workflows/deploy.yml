@@ -24,11 +24,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configure Pages
-        id: cfg
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
+      - name: Probe Pages API state (diagnostic)
+        run: |
+          set +e
+          RESP=$(curl -s -w "\n%{http_code}" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/roseG-lin/remi-website/pages)
+          CODE=$(echo "$RESP" | tail -1)
+          BODY=$(echo "$RESP" | head -n -1)
+          echo "PAGES_API_HTTP=$CODE"
+          echo "$BODY" | head -c 600 > pages-probe.txt
+          echo "probe done, http=$CODE"
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
