@@ -542,7 +542,7 @@ html.cc, html.cc * { cursor: none !important; }
   .hero-sub { font-size: 0.98rem; }
   .hero-kpis { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
   .hero-kpi .v { font-size: 1.8rem; }
-  .nav-links a:not(.nav-os) { display: none; }
+  .nav-links a:not(.nav-os):not(.nav-resume) { display: none; }
   #nav { padding: 0 var(--space-5); }
   .more-grid, .gap-grid { grid-template-columns: 1fr; }
   #constellation { height: 400px; }
@@ -666,6 +666,7 @@ html.cc, html.cc * { cursor: none !important; }
 <nav id="nav">
   <span class="nav-brand">REMI<b>.</b> <span class="muted">AI 售前 × 产品构建</span></span>
   <div class="nav-links">
+    <a class="nav-resume" href="#resume">简历</a>
     <a href="#cap">能力</a>
     <a href="#cases">项目</a>
     <a href="#story">经历</a>
