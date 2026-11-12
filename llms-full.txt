@@ -33,14 +33,14 @@
    20 条规则三类覆盖（Vibe Coding 特有 / OWASP / LLM·Agentic），四层架构：静态侦察 → 沙箱红蓝对抗 → 自进化知识图谱 → 可视化仪表盘；潮汛全链路实测 1080 项发现、191 个文件秒级扫完，250 项测试锁定。
 3. **玲珑秘库 · 政企大模型隐私安全隔离中间件（含本地检索引擎）** — https://www.remifei.cn/case/03-miku-privacy.html
    使用端与接收端可见真实业务数据，云端大模型仅见加密占位符；政企安全使用公有云大模型的零泄密前提，7/7 场景验收通过，外泄风险降为 0。检索侧同一引擎：119 份真实复杂业务文档实测调优（解析切片 → 混合检索重排 → Agentic 自纠错，命中率 4/5 → 5/5，1529 向量点、724 秒 CPU 建库）。
-4. **玲珑之眼 · 企业级 AIGC 视频自动化产线** — https://www.remifei.cn/case/04-reyes-video.html
+4. **玲珑之眼 · 企业级 AIGC 视频自动化产线** — https://www.remifei.cn/case/07-reyes-video.html
    讲稿进、成片出：白板动画、配音、字幕、合成五站全自动流水线；迭代至 v8，222 项测试锁定，166 秒实测极速成片。
 
 ## 四、更多工程样本（统计与工程严谨性佐证）
 
 - **爻胜 YiSheng · 赛事预测统计引擎** — https://www.remifei.cn/case/05-yisheng-engine.html （913 场校准 Elo + Dixon-Coles，763 场回测准确率 61.9%，校准误差 ECE 2.3%）
 - **玲珑小说引擎 · 创作工程化** — https://www.remifei.cn/case/06-novel-engine.html （单一真相源 + 代码化校验，2499 项测试守质量门）
-- **玲珑镜面 Mirror · 声明即界面** — https://www.remifei.cn/case/07-mirror-value.html （功能意图声明 26 秒生成界面，14 套主题 AA 无障碍门禁，553 测试）
+- **玲珑镜面 Mirror · 声明即界面** — https://www.remifei.cn/case/04-mirror-value.html （功能意图声明 26 秒生成界面，14 套主题 AA 无障碍门禁，553 测试）
 - **玲珑食养 · 约束求解** — https://www.remifei.cn/case/08-shiyang-solver.html （中医食疗 × 营养学 × CP-SAT，L1-L4 四层约束，448 测试 94% 覆盖）
 - **玲珑职举 LongJob · 求职流水线** — https://www.remifei.cn/case/09-longjob-pipeline.html （真实 JD 进 L0-L5 FSM，1011 测试 96% 覆盖；本作品集网站即其 L3 产物）
 
