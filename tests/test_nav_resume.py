@@ -64,14 +64,21 @@ def test_mobile_nav_resume_visible_and_navigates(base_url):
         link.wait_for(state="attached", timeout=5000)
         assert link.is_visible(), "手机宽下「简历」入口不可见——:544 隐藏规则未放行 .nav-resume"
         link.click()
-        page.wait_for_timeout(800)  # 平滑滚动到位
+        page.wait_for_timeout(200)
         assert "#resume" in page.url, f"点击后 hash 未变为 #resume（当前 {page.url}）"
-        box = page.evaluate(
-            "() => { const el = document.querySelector('#resume');"
-            " const r = el.getBoundingClientRect(); return { top: r.top, height: r.height }; }"
-        )
-        assert box["height"] > 0, "#resume 区块高度为 0"
-        assert box["top"] < 200, f"#resume 未进入视口（top={box['top']:.0f}px）"
+        # 平滑滚动是距离相关的动画：轮询等它到位（4s 窗口），不用固定等待猜时长
+        try:
+            page.wait_for_function(
+                "() => { const el = document.querySelector('#resume');"
+                " const r = el.getBoundingClientRect(); return r.top < 200 && r.height > 0; }",
+                timeout=4000,
+            )
+        except Exception:
+            box = page.evaluate(
+                "() => { const el = document.querySelector('#resume');"
+                " const r = el.getBoundingClientRect(); return { top: r.top, height: r.height }; }"
+            )
+            assert False, f"#resume 4s 内未进入视口（top={box['top']:.0f}px）"
         browser.close()
 
 
