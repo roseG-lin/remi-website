@@ -1462,6 +1462,12 @@ $$('[data-print]').forEach(b => b.addEventListener('click', () => {
   $('#printArea').innerHTML = '<div class="resume-doc">' + RESUME_HTML + '</div>';
   window.print();
 }));
+// beforeprint 兜底：不经「打印简历」按钮、直接菜单 Ctrl+P 时也先填充 #printArea，
+// 否则 @media print 隐藏全页后 HR 拿到的是一页白纸（圆桌 D席 R5 实锤修复）。
+window.addEventListener('beforeprint', () => {
+  const a = document.querySelector('#printArea');
+  if (a && !a.innerHTML.trim()) a.innerHTML = '<div class="resume-doc">' + RESUME_HTML + '</div>';
+});
 $$('[data-copy-email]').forEach(b => b.addEventListener('click', () => {
   const done = () => toast('邮箱已复制：' + CONTENT.email);
   if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(CONTENT.email).then(done, done);
